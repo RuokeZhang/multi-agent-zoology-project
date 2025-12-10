@@ -1,0 +1,51 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Agent Zoology Assistant</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 1rem; }
+    .tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .tab { padding: 0.5rem 1rem; border: 1px solid #ccc; cursor: pointer; }
+    .tab.active { background: #eef; border-color: #88a; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    textarea { width: 100%; height: 80px; }
+    pre { background: #f7f7f7; padding: 0.75rem; border: 1px solid #ddd; min-height: 80px; }
+  </style>
+</head>
+<body>
+  <h1>Multi-Agent Zoology Assistant</h1>
+  <div class="tabs">
+    <div class="tab active" data-target="classifier">Species Classifier</div>
+    <div class="tab" data-target="habitat">Habitat Analyst</div>
+    <div class="tab" data-target="conservation">Conservation Advisor</div>
+  </div>
+
+  <div id="classifier" class="panel active">
+    <h3>SpeciesClassifierAgent</h3>
+    <textarea id="input-classifier" placeholder="Enter species (e.g., African elephant)"></textarea>
+    <button onclick="sendQuery('classifier')">Ask</button>
+    <pre id="output-classifier"></pre>
+  </div>
+
+  <div id="habitat" class="panel">
+    <h3>HabitatAnalystAgent</h3>
+    <textarea id="input-habitat" placeholder="Enter species"></textarea>
+    <button onclick="sendQuery('habitat')">Ask</button>
+    <pre id="output-habitat"></pre>
+  </div>
+
+  <div id="conservation" class="panel">
+    <h3>ConservationAdvisorAgent</h3>
+    <textarea id="input-conservation" placeholder="Enter species"></textarea>
+    <button onclick="sendQuery('conservation')">Ask</button>
+    <pre id="output-conservation"></pre>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
+```
